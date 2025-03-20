@@ -1,8 +1,8 @@
 <?php
 
-namespace Zahzah\ModulePhysicalExamination;
+namespace Hanafalah\ModulePhysicalExamination;
 
-use Zahzah\LaravelSupport\Providers\BaseServiceProvider;
+use Hanafalah\LaravelSupport\Providers\BaseServiceProvider;
 
 class ModulePhysicalExaminationServiceProvider extends BaseServiceProvider
 {
@@ -14,21 +14,22 @@ class ModulePhysicalExaminationServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->registerMainClass(ModulePhysicalExamination::class)
-             ->registerCommandService(Providers\CommandServiceProvider::class)
-             ->registers([           
+            ->registerCommandService(Providers\CommandServiceProvider::class)
+            ->registers([
                 '*',
-                'Services'  => function(){
+                'Services'  => function () {
                     $this->binds([
                         Contracts\ModulePhysicalExamination::class  => ModulePhysicalExamination::class,
                         Contracts\PhysicalExamination::class        => Schemas\PhysicalExamination::class,
                         Contracts\PatientPhysicalExamination::class => Schemas\PatientPhysicalExamination::class
                     ]);
                 }
-             ]);
+            ]);
         $this->setupExaminationLists();
     }
 
-    private function setupExaminationLists(): self{
+    private function setupExaminationLists(): self
+    {
         $examination_lists = config('database.examinations', []);
         $lists = config('module-physical-examination.examinations', []);
         $examination_lists = array_merge($examination_lists, $lists);
@@ -36,11 +37,13 @@ class ModulePhysicalExaminationServiceProvider extends BaseServiceProvider
         return $this;
     }
 
-    protected function dir(): string{
-        return __DIR__.'/';
+    protected function dir(): string
+    {
+        return __DIR__ . '/';
     }
 
-    protected function migrationPath(string $path = ''): string{
+    protected function migrationPath(string $path = ''): string
+    {
         return database_path($path);
     }
 }

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Zahzah\ModulePhysicalExamination\Providers;
+namespace Hanafalah\ModulePhysicalExamination\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Zahzah\ModulePhysicalExamination\Commands as Commands;
+use Hanafalah\ModulePhysicalExamination\Commands as Commands;
 
 class CommandServiceProvider extends ServiceProvider
 {
@@ -14,11 +14,13 @@ class CommandServiceProvider extends ServiceProvider
     ];
 
 
-    public function register(){
+    public function register()
+    {
         $this->commands($this->commands);
     }
 
-    public function provides(){
+    public function provides()
+    {
         return $this->commands;
     }
 }

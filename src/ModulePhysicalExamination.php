@@ -1,9 +1,7 @@
 <?php
 
-namespace Zahzah\ModulePhysicalExamination;
+namespace Hanafalah\ModulePhysicalExamination;
 
-use Zahzah\LaravelSupport\Supports\PackageManagement;
+use Hanafalah\LaravelSupport\Supports\PackageManagement;
 
-class ModulePhysicalExamination extends PackageManagement implements Contracts\ModulePhysicalExamination{
-
-}
+class ModulePhysicalExamination extends PackageManagement implements Contracts\ModulePhysicalExamination {}

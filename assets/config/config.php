@@ -1,7 +1,9 @@
 <?php
 
-use Zahzah\ModulePhysicalExamination\{
-    Models, Schemas, Contracts
+use Hanafalah\ModulePhysicalExamination\{
+    Models,
+    Schemas,
+    Contracts
 };
 
 return [

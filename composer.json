@@ -1,22 +1,22 @@
 {
-    "name": "zahzah/module-physical-examination",
+    "name": "hanafalah/module-physical-examination",
     "description": "module for anatomical master data",
     "type": "package",
     "require": {
-        "zahzah/laravel-support": "1.x",
-        "zahzah/module-patient": "1.x",
-        "gii/module-examination": "1.x",
-        "zahzah/module-anatomy": "1.x"
+        "hanafalah/laravel-support": "1.x",
+        "hanafalah/module-patient": "1.x",
+        "hanafalah/module-examination": "1.x",
+        "hanafalah/module-anatomy": "1.x"
     },
     "autoload": {
         "psr-4": {
-            "Zahzah\\ModulePhysicalExamination\\": "src/"
+            "Hanafalah\\ModulePhysicalExamination\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Zahzah\\ModulePhysicalExamination\\ModulePhysicalExaminationServiceProvider"
+                "Hanafalah\\ModulePhysicalExamination\\ModulePhysicalExaminationServiceProvider"
             ]
         }
     },

@@ -1,9 +1,7 @@
 <?php
 
-namespace Zahzah\ModulePhysicalExamination\Contracts;
+namespace Hanafalah\ModulePhysicalExamination\Contracts;
 
-use Zahzah\LaravelSupport\Contracts\DataManagement;
+use Hanafalah\LaravelSupport\Contracts\DataManagement;
 
-interface PhysicalExamination extends DataManagement{
-    
-}
+interface PhysicalExamination extends DataManagement {}
