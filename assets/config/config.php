@@ -7,8 +7,15 @@ use Hanafalah\ModulePhysicalExamination\{
 };
 
 return [
-    'contracts' => [
-        'patient_physical_examination' => Contracts\PatientPhysicalExamination::class
+    'app' => [
+        'contracts' => [
+            //ADD YOUR CONTRACTS HERE
+            'patient_physical_examination' => Contracts\PatientPhysicalExamination::class
+        ],
+    ],
+    'libs' => [
+        'model' => 'Models',
+        'contract' => 'Contracts'
     ],
     'database' => [
         'models' => [
