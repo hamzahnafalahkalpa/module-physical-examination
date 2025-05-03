@@ -1,24 +1,32 @@
 <?php
 
 use Hanafalah\ModulePhysicalExamination\{
-    Models,
-    Schemas,
-    Contracts
+    Commands,
 };
 
 return [
-    'contracts' => [
-        'patient_physical_examination' => Contracts\PatientPhysicalExamination::class
+    'namespace' => 'Hanafalah\\ModulePhysicalExamination',
+    'app' => [
+        'contracts' => [
+            //ADD YOUR CONTRACTS HERE
+        ]
+    ],
+    'libs' => [
+        'model' => 'Models',
+        'contract' => 'Contracts',
+        'schema' => 'Schemas',
+        'database' => 'Database',
+        'data' => 'Data',
+        'resource' => 'Resources',
+        'migration' => '../assets/database/migrations'
     ],
     'database' => [
         'models' => [
-            'PhysicalExamination' => Models\PhysicalExamination::class,
-            'PatientPhysicalExamination' => Models\PatientPhysicalExamination::class
         ]
     ],
     'examinations' => [
-        'PhysicalExamination' => [
-            'schema' => Schemas\PhysicalExamination::class
-        ]
+    ],
+    'commands' => [
+        Commands\InstallMakeCommand::class
     ]
 ];
