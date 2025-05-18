@@ -38,14 +38,14 @@ class PatientPhysicalExamination extends Examination
         'condition' => 'string'
     ];
 
-    public function toViewApi()
+    public function getViewResource()
     {
-        return new ViewPatientPhysicalExamination($this);
+        return ViewPatientPhysicalExamination::class;
     }
 
-    public function toShowApi()
+    public function getShowResource()
     {
-        return new ShowPatientPhysicalExamination($this);
+        return ShowPatientPhysicalExamination::class;
     }
 
     public function anatomy()
