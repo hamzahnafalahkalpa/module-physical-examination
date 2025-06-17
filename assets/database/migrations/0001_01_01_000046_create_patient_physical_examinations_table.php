@@ -31,7 +31,7 @@ return new class extends Migration
                 $patient = app(config('database.models.Patient', Patient::class));
                 $anatomy = app(config('database.models.Anatomy', Anatomy::class));
 
-                $table->ulid('id')->collation('utf8mb4_bin')->primary();
+                $table->ulid('id')->primary();
                 $table->string('condition')->nullable(false);
 
                 $table->foreignIdFor($anatomy::class)->nullable(false)
