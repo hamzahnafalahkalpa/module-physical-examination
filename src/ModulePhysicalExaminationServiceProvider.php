@@ -15,16 +15,7 @@ class ModulePhysicalExaminationServiceProvider extends BaseServiceProvider
     {
         $this->registerMainClass(ModulePhysicalExamination::class)
             ->registerCommandService(Providers\CommandServiceProvider::class)
-            ->registers([
-                '*',
-                'Services'  => function () {
-                    $this->binds([
-                        Contracts\ModulePhysicalExamination::class  => ModulePhysicalExamination::class,
-                        Contracts\PhysicalExamination::class        => Schemas\PhysicalExamination::class,
-                        Contracts\PatientPhysicalExamination::class => Schemas\PatientPhysicalExamination::class
-                    ]);
-                }
-            ]);
+            ->registers(['*']);
         $this->setupExaminationLists();
     }
 

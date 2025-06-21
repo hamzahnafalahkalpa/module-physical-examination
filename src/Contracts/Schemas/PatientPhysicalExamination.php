@@ -1,6 +1,6 @@
 <?php
 
-namespace Hanafalah\ModulePhysicalExamination\Contracts;
+namespace Hanafalah\ModulePhysicalExamination\Contracts\Schemas;
 
 use Hanafalah\LaravelSupport\Contracts\Supports\DataManagement;
 

@@ -5,9 +5,8 @@ namespace Hanafalah\ModulePhysicalExamination\Schemas;
 use Hanafalah\ModuleExamination\Schemas\Examination\Assessment\Assessment;
 use Illuminate\Database\Eloquent\Model;
 use Hanafalah\ModulePhysicalExamination\Contracts;
-use Hanafalah\ModulePhysicalExamination\Contracts\PatientPhysicalExamination;
 
-class PhysicalExamination extends Assessment implements Contracts\PhysicalExamination
+class PhysicalExamination extends Assessment implements Contracts\Schemas\PhysicalExamination
 {
     protected string $__entity = 'PhysicalExamination';
     public static $physicalExamination_model;

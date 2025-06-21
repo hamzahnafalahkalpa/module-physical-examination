@@ -12,7 +12,7 @@ use Hanafalah\ModulePhysicalExamination\Resources\PatientPhysicalExamination\{
     ShowPatientPhysicalExamination
 };
 
-class PatientPhysicalExamination extends PackageManagement implements Contracts\PatientPhysicalExamination
+class PatientPhysicalExamination extends PackageManagement implements Contracts\Schemas\PatientPhysicalExamination
 {
     protected string $__entity = 'PatientPhysicalExamination';
     public static $patient_physical_examination_model;
