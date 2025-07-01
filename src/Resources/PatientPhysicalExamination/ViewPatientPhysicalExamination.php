@@ -18,14 +18,14 @@ class ViewPatientPhysicalExamination extends ApiResource
       'id'             => $this->id,
       'reference_type' => $this->reference_type,
       'reference'      => $this->relationValidation('reference', function () {
-        return $this->reference->toViewApi();
+        return $this->reference->toViewApi()->resolve();
       }),
       'anatomy'        => $this->relationValidation('anatomy', function () {
-        return $this->anatomy->toViewApi();
+        return $this->anatomy->toViewApi()->resolve();
       }),
       'condition'      => $this->condition,
       'patient'        => $this->relationValidation('patient', function () {
-        return $this->patient->toViewApi();
+        return $this->patient->toViewApi()->resolve();
       })
     ];
 

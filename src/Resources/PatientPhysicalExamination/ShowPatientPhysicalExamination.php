@@ -16,13 +16,13 @@ class ShowPatientPhysicalExamination extends ViewPatientPhysicalExamination
   {
     $arr = [
       'reference'      => $this->relationValidation('reference', function () {
-        return $this->reference->toShowApi();
+        return $this->reference->toShowApi()->resolve();
       }),
       'anatomy'        => $this->relationValidation('anatomy', function () {
-        return $this->anatomy->toShowApi();
+        return $this->anatomy->toShowApi()->resolve();
       }),
       'patient'        => $this->relationValidation('patient', function () {
-        return $this->patient->toShowApi();
+        return $this->patient->toShowApi()->resolve();
       })
     ];
     $arr = $this->mergeArray(parent::toArray($request), $arr);
