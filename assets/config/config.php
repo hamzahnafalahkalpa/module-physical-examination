@@ -1,11 +1,15 @@
 <?php
 
+use Hanafalah\ModulePhysicalExamination\{
+    Commands,
+};
+
 return [
-    'namespace' => 'Hanafalah\ModulePhysicalExamination',
+    'namespace' => 'Hanafalah\\ModulePhysicalExamination',
     'app' => [
         'contracts' => [
             //ADD YOUR CONTRACTS HERE
-        ],
+        ]
     ],
     'libs' => [
         'model' => 'Models',
@@ -19,5 +23,10 @@ return [
     'database' => [
         'models' => [
         ]
+    ],
+    'examinations' => [
+    ],
+    'commands' => [
+        Commands\InstallMakeCommand::class
     ]
 ];
