@@ -3,10 +3,10 @@
     "description": "module for anatomical master data",
     "type": "package",
     "require": {
-        "hanafalah/laravel-support": "1.x-dev as 1.0",
-        "hanafalah/module-patient": "1.x-dev as 1.0",
-        "hanafalah/module-examination": "1.x-dev as 1.0",
-        "hanafalah/module-anatomy": "1.x-dev as 1.0"
+        "hanafalah/laravel-support": "dev-main",
+        "hanafalah/module-patient": "dev-main",
+        "hanafalah/module-examination": "dev-main",
+        "hanafalah/module-anatomy": "dev-main"
     },
     "autoload": {
         "psr-4": {
