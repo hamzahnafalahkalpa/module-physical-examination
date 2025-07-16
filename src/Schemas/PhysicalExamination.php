@@ -2,6 +2,7 @@
 
 namespace Hanafalah\ModulePhysicalExamination\Schemas;
 
+use Hanafalah\ModuleExamination\Contracts\Data\AssessmentData;
 use Hanafalah\ModuleExamination\Schemas\Examination\Assessment\Assessment;
 use Illuminate\Database\Eloquent\Model;
 use Hanafalah\ModulePhysicalExamination\Contracts;
@@ -11,7 +12,7 @@ class PhysicalExamination extends Assessment implements Contracts\Schemas\Physic
     protected string $__entity = 'PhysicalExamination';
     public static $physicalExamination_model;
 
-    public function prepareStore(?array $attributes = null): Model
+    public function prepareStore(AssessmentData $assessment_dto): Model
     {
         $attributes ??= request()->all();
 
