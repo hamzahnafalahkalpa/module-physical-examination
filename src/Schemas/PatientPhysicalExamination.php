@@ -15,7 +15,7 @@ use Hanafalah\ModulePhysicalExamination\Resources\PatientPhysicalExamination\{
 class PatientPhysicalExamination extends PackageManagement implements Contracts\Schemas\PatientPhysicalExamination
 {
     protected string $__entity = 'PatientPhysicalExamination';
-    public static $patient_physical_examination_model;
+    public $patient_physical_examination_model;
 
     protected array $__resources = [
         'view' => ViewPatientPhysicalExamination::class,
@@ -38,7 +38,7 @@ class PatientPhysicalExamination extends PackageManagement implements Contracts\
         $exam->is_permanent = $attributes['is_permanent'] ?? false;
         $exam->coordinate   = $attributes['coordinate'] ?? [];
 
-        return static::$patient_physical_examination_model = $exam;
+        return $this->patient_physical_examination_model = $exam;
     }
 
     public function prepareViewPatientPhysicalExaminationList(?array $attributes = null): Collection
@@ -49,7 +49,7 @@ class PatientPhysicalExamination extends PackageManagement implements Contracts\
             $query->where('morph', $attributes['morph']);
         })->get();
 
-        return static::$patient_physical_examination_model = $anatomies;
+        return $this->patient_physical_examination_model = $anatomies;
     }
 
     public function viewPatientPhysicalExaminationList(): array

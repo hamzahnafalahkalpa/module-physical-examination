@@ -10,7 +10,7 @@ use Hanafalah\ModulePhysicalExamination\Contracts;
 class PhysicalExamination extends Assessment implements Contracts\Schemas\PhysicalExamination
 {
     protected string $__entity = 'PhysicalExamination';
-    public static $physicalExamination_model;
+    public $physicalExamination_model;
 
     public function prepareStore(AssessmentData $assessment_dto): Model
     {
@@ -23,7 +23,7 @@ class PhysicalExamination extends Assessment implements Contracts\Schemas\Physic
 
         $this->setAssessmentProp($attributes);
         static::$assessment_model->save();
-        return static::$assessment_model;
+        return $this->assessment_model;
     }
 
     public function addPatientPhysicalExamination(?array $attributes = null): Model
