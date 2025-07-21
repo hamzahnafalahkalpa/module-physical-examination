@@ -22,15 +22,15 @@ class PhysicalExamination extends Assessment implements Contracts\Schemas\Physic
         $this->addPatientPhysicalExamination($attributes);
 
         $this->setAssessmentProp($attributes);
-        static::$assessment_model->save();
+        $this->assessment_model->save();
         return $this->assessment_model;
     }
 
     public function addPatientPhysicalExamination(?array $attributes = null): Model
     {
         $attributes['patient_id']     = static::$__patient->getKey();
-        $attributes['reference_id']   = static::$assessment_model->getKey();
-        $attributes['reference_type'] = static::$assessment_model->morph;
+        $attributes['reference_id']   = $this->assessment_model->getKey();
+        $attributes['reference_type'] = $this->assessment_model->morph;
 
         $patient_physical_examination_schema = $this->schemaContract('patient_physical_examination');
         return $patient_physical_examination_schema->prepareStorePatientPhysicalExamination($attributes);
