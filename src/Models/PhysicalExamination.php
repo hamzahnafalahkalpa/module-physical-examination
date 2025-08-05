@@ -3,6 +3,7 @@
 namespace Hanafalah\ModulePhysicalExamination\Models;
 
 use Hanafalah\ModuleExamination\Models\Examination\Assessment\Assessment;
+use Illuminate\Database\Eloquent\Model;
 
 class PhysicalExamination extends Assessment
 {
@@ -16,8 +17,9 @@ class PhysicalExamination extends Assessment
         'is_permanent'
     ];
 
-    public function getExamResults($model): array
+    public function getExamResults(?Model $model = null): array
     {
+        $model ??= $this;
         $anatomy = $this->AnatomyModel()->findOrFail($model->anatomy_id);
         return [
             'anatomy_id'   => $model->anatomy_id,
