@@ -13,8 +13,7 @@ class PhysicalExamination extends Assessment
         'anatomy_id',
         'anatomy_name',
         'coordinate',
-        'condition',
-        'is_permanent'
+        'condition'
     ];
 
     public function getExamResults(?Model $model = null): array
@@ -25,8 +24,7 @@ class PhysicalExamination extends Assessment
             'anatomy_id'   => $model->anatomy_id,
             'anatomy_name' => $anatomy->name,
             'coordinate'   => $model->coordinate,
-            'condition'    => $model->condition,
-            'is_permanent' => $model->is_permanent
+            'condition'    => $model->condition
         ];
     }
 }
