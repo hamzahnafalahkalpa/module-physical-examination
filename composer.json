@@ -11,7 +11,10 @@
     "autoload": {
         "psr-4": {
             "Hanafalah\\ModulePhysicalExamination\\": "src/"
-        }
+        },
+        "files": [
+            "src/helper.php"
+        ]
     },
     "extra": {
         "laravel": {
