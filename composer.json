@@ -16,13 +16,6 @@
             "src/helper.php"
         ]
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Hanafalah\\ModulePhysicalExamination\\ModulePhysicalExaminationServiceProvider"
-            ]
-        }
-    },
     "authors": [
         {
             "name": "Hamzah Nur Al Falah",
