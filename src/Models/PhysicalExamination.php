@@ -37,9 +37,9 @@ class PhysicalExamination extends Assessment
                     }
                     if (!$is_bayi_balita && !$is_anak_anak){
                         $is_request_sex = true;
-                        request()->merge([
-                            'sex' => $patient->prop_people['sex']
-                        ]);
+                        // request()->merge([
+                        //     'sex' => $patient->prop_people['sex']
+                        // ]);
                     }
                 }
                 if ($is_request_sex){
@@ -48,6 +48,8 @@ class PhysicalExamination extends Assessment
                     $var = Str::after($var,request()->sex.'_');
                 }
                 if ($is_bayi_balita || $is_anak_anak){
+                    if ($is_bayi_balita && !Str::contains($var,'baby')) continue;
+                    if ($is_anak_anak && !Str::contains($var,'child')) continue;
                     $default = $this->getDefaultForm($var);
                 }
             }else{
