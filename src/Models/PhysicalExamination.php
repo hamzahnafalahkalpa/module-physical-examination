@@ -25,15 +25,30 @@ class PhysicalExamination extends Assessment
             if ($is_request_patient_id || $is_request_sex){
                 if ($is_request_patient_id){
                     $patient = $this->PatientModel()->findOrFail(request()->patient_id);
-                    $is_request_sex = true;
-                    request()->merge([
-                        'sex' => $patient->prop_people['sex']
-                    ]);
+                    $patient_segment = $this->patientSegment($patient->prop_people['dob']);
+                    $is_bayi_balita = false;
+                    $is_anak_anak = false;
+                    $is_request_sex = false;
+                    if ($patient_segment == 'bayi dan balita'){
+                        $is_bayi_balita = true;
+                    }   
+                    if ($patient_segment == 'anak-anak'){
+                        $is_anak_anak = true;
+                    }
+                    if (!$is_bayi_balita && !$is_anak_anak){
+                        $is_request_sex = true;
+                        request()->merge([
+                            'sex' => $patient->prop_people['sex']
+                        ]);
+                    }
                 }
                 if ($is_request_sex){
                     if (!Str::contains($var,request()->sex)) continue;
                     $default = $this->getDefaultForm($var);
                     $var = Str::after($var,request()->sex.'_');
+                }
+                if ($is_bayi_balita || $is_anak_anak){
+                    $default = $this->getDefaultForm($var);
                 }
             }else{
                 $default = $this->getDefaultForm($var);
