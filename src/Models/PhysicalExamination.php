@@ -42,18 +42,19 @@ class PhysicalExamination extends Assessment
                         $is_request_sex = true;                        
                     }
                 }
-                if ($is_request_sex){
-                    if (!Str::contains($var,request()->sex)) continue;
-                    $default = $this->getDefaultForm($var);
-                    $var = Str::after($var,request()->sex.'_');
-                }
-                if ($is_bayi_balita || $is_anak_anak){
-                    if ($is_bayi_balita && !Str::contains($var,'baby')) continue;
-                    if ($is_anak_anak && !Str::contains($var,'child')) continue;
-                    $default = $this->getDefaultForm($var);
-                }
                 if ($var == 'odontogram'){
                     $default = $this->getDefaultForm($var);
+                }else{
+                    if ($is_request_sex){
+                        if (!Str::contains($var,request()->sex)) continue;
+                        $default = $this->getDefaultForm($var);
+                        $var = Str::after($var,request()->sex.'_');
+                    }
+                    if ($is_bayi_balita || $is_anak_anak){
+                        if ($is_bayi_balita && !Str::contains($var,'baby')) continue;
+                        if ($is_anak_anak && !Str::contains($var,'child')) continue;
+                        $default = $this->getDefaultForm($var);
+                    }                
                 }
             }else{
                 $default = $this->getDefaultForm($var);
